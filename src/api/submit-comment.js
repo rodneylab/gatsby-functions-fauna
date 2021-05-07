@@ -51,7 +51,7 @@ const triggerRebuild = async () => {
   const result = (async () => {
     try {
       const response = await axios({
-        url: `https://webhook.gatsbyjs.com/hooks/data_source/${process.env.GATSBY_CLOUD_SITE_ID}`,
+        url: `https://webhook.gatsbyjs.com/hooks/data_source/publish/${process.env.GATSBY_CLOUD_SITE_ID}`,
         method: 'POST',
       });
       return { successful: true, message: response };
