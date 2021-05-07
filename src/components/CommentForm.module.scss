@@ -11,7 +11,8 @@
   margin: 0 auto;
   width: 50%;
 
-  input, textarea {
+  input,
+  textarea {
     border-radius: $spacing-1;
   }
 }
@@ -36,11 +37,26 @@
     border-radius: $spacing-3;
   }
 
+  input:disabled {
+    background-color: (lighten($color-theme-4, 40%));
+  }
   input:hover {
     cursor: pointer;
   }
 }
 
+.success-text {
+  width: 100%;
+  background-color: $color-theme-4;
+  color: $color-theme-3;
+  border-radius: $spacing-2;
+  margin-top: $spacing-12;
+  padding: $spacing-2;
+  p {
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
 
 @media screen and (max-width: $desktop-breakpoint) {
   .form-input {
