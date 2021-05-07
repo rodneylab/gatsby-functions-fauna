@@ -101,8 +101,8 @@ export default async function handler(req, res) {
     if (!createCommentResult.successful) {
       res.status(400).send(createCommentResult.message);
     } else {
-      const triggerRebuildResult = await triggerRebuild();
-      res.status(triggerRebuildResult.successful ? 200 : 400).send(triggerRebuildResult.message);
+      await triggerRebuild();
+      res.status(200).send('All is well that ends well.');
     }
   }
 }
