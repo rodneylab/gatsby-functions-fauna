@@ -39,10 +39,10 @@ const PureBlogPost = ({ children, data }) => {
           <section itemProp="articleBody">
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
           </section>
-          <aside>
+          <section>
             <CommentForm slug={slug} />
             {comments.edges.length > 0 ? <Comments comments={comments.edges} /> : null}
-          </aside>
+          </section>
         </article>
       </Layout>
     </>
@@ -55,6 +55,18 @@ PureBlogPost.propTypes = {
       siteMetadata: PropTypes.shape({
         siteUrl: PropTypes.string,
       }),
+    }),
+    comments: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            commentId: PropTypes.string,
+            date: PropTypes.string,
+            name: PropTypes.string,
+            text: PropTypes.text,
+          }),
+        }),
+      ),
     }),
     post: PropTypes.shape({
       slug: PropTypes.string,
