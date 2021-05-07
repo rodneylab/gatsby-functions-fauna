@@ -5,6 +5,9 @@ import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 
 import BannerImage from './BannerImage';
+import CommentForm from './CommentForm';
+import Comments from './Comments';
+
 import { ExternalLink, TwitterMessageLink } from './Link';
 import { PureLayout as Layout } from './Layout';
 import { PureSEO as SEO } from './SEO';
@@ -16,6 +19,7 @@ const shortcodes = {
 };
 
 const PureBlogPost = ({ children, data }) => {
+  const { comments } = data;
   const { frontmatter, slug } = data.post;
   const {
     bannerImage, featuredImageAlt, seoMetaDescription, postTitle,
@@ -35,6 +39,10 @@ const PureBlogPost = ({ children, data }) => {
           <section itemProp="articleBody">
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
           </section>
+          <aside>
+            <CommentForm slug={slug} />
+            {comments.edges.length > 0 ? <Comments comments={comments.edges} /> : null}
+          </aside>
         </article>
       </Layout>
     </>
