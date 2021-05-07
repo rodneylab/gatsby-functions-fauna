@@ -3,13 +3,16 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 
-import { container, formButton, formError, formInput } from './CommentForm.module.scss';
+import {
+  container, formButton, formError, formInput,
+} from './CommentForm.module.scss';
 import FormInput from './FormInput';
 import FormInputArea from './FormInputArea';
 
 const CommentForm = ({ slug }) => {
   const [serverState, setServerState] = useState({ ok: true, message: '' });
   const [showForm, setShowForm] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,6 +25,7 @@ const CommentForm = ({ slug }) => {
 
   const onSubmit = async (data, event) => {
     try {
+      setSubmitting(true);
       const { Email: email, Name: name, Comments: text } = data;
       await axios({
         url: '/api/submit-comment',
@@ -36,6 +40,7 @@ const CommentForm = ({ slug }) => {
       });
       // console.log('Response: ', response);
       handleServerResponse(true, 'Thanks for your comment it will be reviewed and posted shortly.');
+      setSubmitting(false);
       event.target.reset();
       setShowForm(false);
     } catch (error) {
@@ -53,7 +58,7 @@ const CommentForm = ({ slug }) => {
     }
   };
 
-  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   if (!showForm) {
     return null;
@@ -117,7 +122,7 @@ const CommentForm = ({ slug }) => {
         ) : null}
       </div>
       <div className={formButton}>
-        <input type="submit" value="Submit your comment" />
+        <input type="submit" disabled={!submitting} value="Submit your comment" />
         {serverState.message ? (
           <small className={serverState.ok ? '' : formError}>{serverState.message}</small>
         ) : null}
