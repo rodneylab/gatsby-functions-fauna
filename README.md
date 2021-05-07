@@ -7,20 +7,13 @@
   Gatsby Functions Fauna
 </h1>
 
-Demo site fir showing new Gatsby Cloud Fucntions feature.  This is an MDX blog site built on the Gatsby v3 starter:  <a aria-label="open gatsby-starter-climate starter" href="https://github.com/rodneylab/gatsby-starter-climate" rel="noopener">gatsby-starter-climate</a>.
-Boilerpate code for a <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.org" rel="nofollow">Gatsby 3</a> blog using <a aria-label="Vist the Gatsby website" href="https://www.netlify.com/" rel="nofollow">Netlify</a> for hosting.  Based on principles of:
-
-- Accessibility
-- Security
-- Speed
+Demo site for showing new Gatsby Cloud Functions feature.  This is an MDX blog site built on the Gatsby v3 starter:  <a aria-label="open gatsby-starter-climate starter" href="https://github.com/rodneylab/gatsby-starter-climate" rel="noopener">gatsby-starter-climate</a>.
+Boilerpate code for a <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.org" rel="nofollow">Gatsby 3</a> blog using <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.com/products/cloud/" rel="nofollow">Gatsby Cloud</a> for hosting.
 
 Features:
-- Optimised for Gatsby 3 - using File Route API, new Gatsby 3 Image Plugin
-- 100% score of Lighthouse accessibility 
-- No accessibility warning on axe check
-- High lighthouse speed scores
-- A or higher security rating for headers from securityheaders.com
-- Correct use of semantic HTML (only one `<h1>` per page, sections and posts use `<section>` and `<article>` correctly etc.).
+- Comments stored <a aria-label="Open the fauna website" href="https://fauna.com/">using Fauna data API</a> as a database.  These are ingested into the Gatsby GraphQL data layer at build, meaning all commments are static.  This innovation brings comments to a JAMStack site without the need for Java Script heavy external services which may slow the site down, impacting user experience,
+- Forms use <a aria-label="Meet React Hook Form" href="https://react-hook-form.com/">React Hook Form with added accessibility attributes,
+- Integrated <a aria-label="Learn more about Akismet" href="https://akismet.com/">spam check using Akismet</a>, a long standing rusted anti-spam solution for years, used in millions of sites in the WordPress space.  The spam stop feature is triggered by a Gatsby Function.  The function also fires off a rebuild on comment submission.
 
 ## 🚀 Quick start
 
@@ -30,7 +23,7 @@ Features:
 
     ```shell
     # create a new Gatsby 3 MDX blog site using gatsby-starter-climate
-    gatsby new my-mdx-blog-starter https://github.com/rodneylab/gatsby-starter-climate
+    gatsby new my-mdx-blog-starter https://github.com/rodneylab/gatsby-functions-fauna
     ```
 
 1.  **Start developing.**
@@ -138,8 +131,17 @@ Run the custom build script to ensure CSP hashes are generated and added to Netl
 npm run build
 ```
 
+[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
+
+Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
+
+
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/rodneylab/gatsby-functions-fauna)
+
 [Netlify](https://netlify.com) CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. Use the button below to build and deploy your own copy of the repository:
 
-<a arai-label="Deploy climate on Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/rodneylab/gatsby-starter-climate" target="_blank" rel="nofollow noopener noreferrer"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+<a aria-label="Deploy gatsby-functions-fauna on Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/rodneylab/gatsby-functions-fauna" target="_blank" rel="nofollow noopener noreferrer"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
 After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorise users to log in to the CMS.
