@@ -25,7 +25,7 @@ const CommentForm = ({ slug }) => {
 
   const onSubmit = async (data, event) => {
     try {
-      // setSubmitting(true);
+      setSubmitting(true);
       const { Email: email, Name: name, Comments: text } = data;
       await axios({
         url: '/api/submit-comment',
