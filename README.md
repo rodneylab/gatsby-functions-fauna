@@ -4,9 +4,10 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby 3 Starter Climate
+  Gatsby Functions Fauna
 </h1>
 
+Demo site fir showing new Gatsby Cloud Fucntions feature.  This is an MDX blog site built on the Gatsby v3 starter:  <a aria-label="open gatsby-starter-climate starter" href="https://github.com/rodneylab/gatsby-starter-climate" rel="noopener">gatsby-starter-climate</a>.
 Boilerpate code for a <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.org" rel="nofollow">Gatsby 3</a> blog using <a aria-label="Vist the Gatsby website" href="https://www.netlify.com/" rel="nofollow">Netlify</a> for hosting.  Based on principles of:
 
 - Accessibility
