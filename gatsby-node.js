@@ -25,7 +25,7 @@ const getComments = async ({ secret, reporter }) => {
   } catch (error) {
     reporter.warn(error);
   }
-  return {};
+  return [];
 };
 
 exports.sourceNodes = async ({
