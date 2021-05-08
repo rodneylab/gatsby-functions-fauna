@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 
 import {
-  container, formButton, formError, formInput, successText,
+  container,
+  formButton,
+  formError,
+  formInput,
+  successText,
 } from './CommentForm.module.scss';
 import FormInput from './FormInput';
 import FormInputArea from './FormInputArea';
@@ -62,7 +66,11 @@ const CommentForm = ({ slug }) => {
   const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   if (!showForm) {
-    return <div className={successText}><p>{serverState.message}</p></div>;
+    return (
+      <div className={successText}>
+        <p>{serverState.message}</p>
+      </div>
+    );
   }
 
   return (
@@ -118,7 +126,7 @@ const CommentForm = ({ slug }) => {
         />
         {errors.Comments ? (
           <span className={formError}>
-            Please enter a comment. Limit your text to 512 characters.
+            <small>Please enter a comment. Limit your text to 512 characters.</small>
           </span>
         ) : null}
       </div>
