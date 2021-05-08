@@ -6,16 +6,42 @@ import BlogRoll from '../components/BlogRoll';
 import Card from '../components/Card';
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
+import { ExternalLink } from '../components/Link';
 
 export default function Home({ data }) {
   return (
     <>
-      <SEO data={data} title="Home" metadescription="Climate - Gatsby v3 Starter for MDX Gatsby Blog" />
+      <SEO
+        data={data}
+        title="Home"
+        metadescription="Climate - Gatsby v3 Starter for MDX Gatsby Blog"
+      />
       <Layout data={data}>
         <>
           <header>
-            <h1>Climate &mdash; Gatsby 3 Starter</h1>
-            <h2>Gatsby 3 Starter for MDX Blog Sites</h2>
+            <h1>Gatsby Functions Fauna Demo</h1>
+            <p>
+              This is a demo site for showing how the
+              {' '}
+              <ExternalLink aria-label="Learn more about Fauna" href="https://fauna.com/">
+                Fauna data API
+              </ExternalLink>
+              {' '}
+              can be used with
+              {' '}
+              <ExternalLink
+                aria-label="Learn more about Gatsby Functions"
+                href="https://www.gatsbyjs.com/functions/"
+              >
+                brand new Gatsby Serverless Functions
+              </ExternalLink>
+              . Click on one of the blog posts below and then add a comment to the post. If your
+              comment passes spam detection, a brand new static site, including your comment will
+              build automatically. Keeping everything static keeps the page fast. We eliminate the
+              need for using Java Script heavy, external services for managing the comments. API
+              calls to Fauna are only invoked by the build server and serverless functions, freeing
+              up resources on the user&apos;s device and creating a top notch user experience.
+            </p>
           </header>
           <Card>
             <h2>About me</h2>
