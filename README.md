@@ -12,8 +12,8 @@ Boilerpate code for a <a aria-label="Vist the Gatsby website" href="https://www.
 
 Features:
 - Comments stored <a aria-label="Open the fauna website" href="https://fauna.com/">using Fauna data API</a> as a database.  These are ingested into the Gatsby GraphQL data layer at build, meaning all commments are static.  This innovation brings comments to a JAMStack site without the need for Java Script heavy external services which may slow the site down, impacting user experience,
-- Forms use <a aria-label="Meet React Hook Form" href="https://react-hook-form.com/">React Hook Form with added accessibility attributes,
-- Integrated <a aria-label="Learn more about Akismet" href="https://akismet.com/">spam check using Akismet</a>, a long standing rusted anti-spam solution for years, used in millions of sites in the WordPress space.  The spam stop feature is triggered by a Gatsby Function.  The function also fires off a rebuild on comment submission.
+- Forms use <a aria-label="Meet React Hook Form" href="https://react-hook-form.com/">React Hook Form</a> with added accessibility attributes,
+- Integrated <a aria-label="Learn more about Akismet" href="https://akismet.com/">spam check using Akismet</a>, a long-standing, trusted anti-spam solution, used in millions of sites in the WordPress space.  The spam stop feature is triggered by a Gatsby Function.  The function also fires off a rebuild on comment submission.
 
 ## 🚀 Quick start
 
@@ -93,9 +93,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 12.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby 3 site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby 3 plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).  To improve security, fairly strict security header parameters are set.  **You will almost certainly need to tweak these for your own use case**. For help use the following resources:
 
-    - <a aria-label="See security heading ratings and tips" href="https://securityheaders.com/" target="_blank" rel="nofollow noopener noreferrer">securityheaders.com</a>
-    - <a aria-label="See security heading tips" href="https://csper.io/"  target="_blank" rel="nofollow noopener noreferrer">csper.io</a>
-    - <a aria-label="Open the Google C S P evaluator tool" href="https://csp-evaluator.withgoogle.com/" target="_blank" rel="nofollow noopener noreferrer">csp-evaluator.withgoogle.com</a>
+- <a aria-label="See security heading ratings and tips" href="https://securityheaders.com/" target="_blank" rel="nofollow noopener noreferrer">securityheaders.com</a>
+- <a aria-label="See security heading tips" href="https://csper.io/"  target="_blank" rel="nofollow noopener noreferrer">csper.io</a>
+- <a aria-label="Open the Google C S P evaluator tool" href="https://csp-evaluator.withgoogle.com/" target="_blank" rel="nofollow noopener noreferrer">csp-evaluator.withgoogle.com</a>
 
 13.  **`gatsby-node.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby&nbsp;3 Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customisation/extension of default Gatsby 3 settings affecting pieces of the site build process.
 
