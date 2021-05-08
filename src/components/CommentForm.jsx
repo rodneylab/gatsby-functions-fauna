@@ -8,6 +8,7 @@ import {
 } from './CommentForm.module.scss';
 import FormInput from './FormInput';
 import FormInputArea from './FormInputArea';
+import { ExternalLink } from './Link';
 
 const CommentForm = ({ slug }) => {
   const [serverState, setServerState] = useState({ ok: true, message: '' });
@@ -122,6 +123,18 @@ const CommentForm = ({ slug }) => {
         ) : null}
       </div>
       <div className={formButton}>
+        <small>
+          We use your IP address and
+          {' '}
+          <ExternalLink
+            aria-label="Learn more about browser user agent from M D N"
+            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent"
+          >
+            browser user agent
+          </ExternalLink>
+          {' '}
+          for spam detection purposes. Neither is stored in our database.
+        </small>
         <input type="submit" disabled={submitting} value="Submit your comment" />
         {serverState.message ? (
           <small className={serverState.ok ? '' : formError}>{serverState.message}</small>
