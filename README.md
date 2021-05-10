@@ -13,7 +13,7 @@
   Gatsby Functions Fauna
 </h1>
 
-This is a demo site for showing how the <a aria-label="Open the fauna website" href="https://fauna.com/">using Fauna data API</a> can be used with <a aria-label="Learn about Gatsby Functions" href="https://www.gatsbyjs.com/functions/">brand new Gatsby Serverless Functions</a>.
+This is a demo site for showing how the <a aria-label="Open the fauna website" href="https://fauna.com/">Fauna data API</a> can be used with <a aria-label="Learn about Gatsby Functions" href="https://www.gatsbyjs.com/functions/">brand new Gatsby Serverless Functions</a>.
 
 Open the test site at <a aria-label="OPen demo site" href="https://gatsbyfunctionsfaunamain.gatsbyjs.io/">gatsbyfunctionsfaunamain.gatsbyjs.io</a>. Open up one of the blog posts and then add a comment to the post. If your comment passes spam detection, a brand new static site, including your comment will build automatically. Keeping everything static keeps the page fast. We eliminate the need for using Java Script heavy, external services for managing the comments. API calls to Fauna are only invoked by the build server and serverless functions, freeing up resources on the user's device and creating a top notch user experience.
 
