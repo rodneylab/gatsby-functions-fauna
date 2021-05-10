@@ -1,3 +1,9 @@
+<picture>
+  <source srcset="./images/rodneylab-github-gatsby-functions-fauna.png" type="image/avif">
+  <source srcset="./images/rodneylab-github-gatsby-functions-fauna.webp" type="image/webp">
+  <img src="./images/rodneylab-github-gatsby-functions-fauna.png" alt="Rodney Lab gatsby-functions-fauna Github banner">
+</picture>
+
 <p align="center">
   <a aria-label="Open Rodney Lab site" href="https://rodneylab.com" rel="nofollow noopener noreferrer">
     <img alt="Rodney Lab logo" src="https://rodneylab.com/assets/icon.png" width="60" />
@@ -7,11 +13,13 @@
   Gatsby Functions Fauna
 </h1>
 
-Demo site for showing new Gatsby Cloud Functions feature.  This is an MDX blog site built on the Gatsby v3 starter:  <a aria-label="open gatsby-starter-climate starter" href="https://github.com/rodneylab/gatsby-starter-climate" rel="noopener">gatsby-starter-climate</a>.
-Boilerpate code for a <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.org" rel="nofollow">Gatsby 3</a> blog using <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.com/products/cloud/" rel="nofollow">Gatsby Cloud</a> for hosting.
+This is a demo site for showing how the <a aria-label="Open the fauna website" href="https://fauna.com/">using Fauna data API</a> can be used with <a aria-label="Learn about Gatsby Functions" href="https://www.gatsbyjs.com/functions/">brand new Gatsby Serverless Functions</a>.
+
+Open the test site at <a aria-label="OPen demo site" href="https://gatsbyfunctionsfaunamain.gatsbyjs.io/">gatsbyfunctionsfaunamain.gatsbyjs.io</a>. Open up one of the blog posts and then add a comment to the post. If your comment passes spam detection, a brand new static site, including your comment will build automatically. Keeping everything static keeps the page fast. We eliminate the need for using Java Script heavy, external services for managing the comments. API calls to Fauna are only invoked by the build server and serverless functions, freeing up resources on the user's device and creating a top notch user experience.
 
 Features:
-- Comments stored <a aria-label="Open the fauna website" href="https://fauna.com/">using Fauna data API</a> as a database.  These are ingested into the Gatsby GraphQL data layer at build, meaning all commments are static.  This innovation brings comments to a JAMStack site without the need for Java Script heavy external services which may slow the site down, impacting user experience,
+
+- Comments are stored <a aria-label="Open the fauna website" href="https://fauna.com/">using Fauna data API</a> as a database.  These are ingested into the Gatsby GraphQL data layer at build, meaning all comments are static.  This innovation brings comments to a JAMStack site without the need for Java Script heavy external services which may slow the site down, impacting user experience,
 - Forms use <a aria-label="Meet React Hook Form" href="https://react-hook-form.com/">React Hook Form</a> with added accessibility attributes,
 - Integrated <a aria-label="Learn more about Akismet" href="https://akismet.com/">spam check using Akismet</a>, a long-standing, trusted anti-spam solution, used in millions of sites in the WordPress space.  The spam stop feature is triggered by a Gatsby Function.  The function also fires off a rebuild on comment submission.
 
@@ -23,7 +31,7 @@ Features:
 
     ```shell
     # create a new Gatsby 3 MDX blog site using gatsby-starter-climate
-    gatsby new my-mdx-blog-starter https://github.com/rodneylab/gatsby-functions-fauna
+    gatsby fauna-blog-comments https://github.com/rodneylab/gatsby-functions-fauna
     ```
 
 1.  **Start developing.**
@@ -31,7 +39,7 @@ Features:
     Navigate into your new site’s directory, copy the example environment variables (and customise them to suit your needs) and start it up.
 
     ```shell
-    cd my-mdx-blog-starter/
+    cd fauna-blog-comments
     cp .env.EXAMPLE .env.development
     cp .env.EXAMPLE .env.production
     gatsby develop
@@ -41,15 +49,20 @@ Features:
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby 3 tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+    Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby 3 tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql).
 
-    Open the `my-mdx-blog-starter` directory in your code editor of choice and edit `src/pages/index.jsx`. Save your changes and the browser will update in real time!
+    Open the `fauna-blog-comments` directory in your code editor of choice and edit `src/pages/index.jsx`. Save your changes and the browser will update in real time!
+
+4.  **Customise Config**
+
+    You will want to update the site `siteTitle` and `siteLanguage` in `config/website.js`.  These data are fed through to site meta tags are helpful to site users with accessibility needs.
 
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby 3 project.
 
     .
+    ├── config/website.js
     ├── cypress
     ├── node_modules
     ├── src
@@ -68,6 +81,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
     ├── package-lock.json
     ├── package.json
     └── README.md
+
+1.  **`/config`**: This directory contains site specific configuration.  Run through the two files to check the language matches your locale.  Also update the site name.
 
 1.  **`/cypress`**: This directory contains Cypress axe accessibility end-to-end tests.  You can expand the tests to suit your needs.
 
@@ -103,13 +118,21 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 15.  **`LICENSE`**: This Gatsby 3 starter is licensed under the BSD-3-Clause license.
 
-16. **`netlify.toml`** This file contains configuration for Netlify builds.  It includes an instruction to use the Netlify `netlify-plugin-gatsby-cache` plugin which helps improve build speed on Netlify.  It also includes the custom build command, defined in `package.json`, which generates Netlify headers with CSP hashes.
-
 17. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
 18. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 19. **`README.md`**: A text file containing useful reference information about your project.
+
+## ☁️ Getting Started with Fauna
+
+Fauna provides transaction databases which are accessible via a cloud API.  It is easy to customise the Fauna functionality used in the demo for your own needs.  To <a aria-label="Open Fauna documentation" href="https://docs/fauna.com/fauna/current/drivers/javascript">get started with fauna see this guide</a>.  Also take a look at how fauna is used in this demo site:
+
+- to **read data from the fauna database** in a query run at site build time in <a href="Jump to the gatsby-node.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/gatsby-node.js">`gatsby-node.js`</a>.
+
+- to **create records in the fauna database** in <a aria-labe="Jump to the submit-commetn.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/src/api/submit-comment.js">`src/api/submit-comment.js`</a>.
+
+Get in touch if I can help with specific questions.  Also let me know if you would like to see a blog post on creating a site using fauna.
 
 ## 🎓 Learning Gatsby 3
 
@@ -121,27 +144,13 @@ Looking for more guidance? Full documentation for Gatsby 3 lives [on the website
 
 ## 💫 Deploy
 
-[Build, Deploy, and Host On Netlify](https://www.netlify.com/)
-
-Netlify offers an easy to configure environment and a generous free tier.  With baked-in CDN and automated TLS certificates it is a great choice for getting your Gatsby 3 MDX blog up and running at warp speed.
-
-Run the custom build script to ensure CSP hashes are generated and added to Netlify headers:
-
-```bash
-npm run build
-```
-
 [Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
 
 Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
 
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/rodneylab/gatsby-functions-fauna):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/rodneylab/gatsby-functions-fauna)
 
-[Netlify](https://netlify.com) CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. Use the button below to build and deploy your own copy of the repository:
-
-<a aria-label="Deploy gatsby-functions-fauna on Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/rodneylab/gatsby-functions-fauna" target="_blank" rel="nofollow noopener noreferrer"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorise users to log in to the CMS.
+Be sure to supply all of the build variables listed in `.env.EXAMPLE` to Gastby Cloud (see Site Settings -> Environment Variables).
