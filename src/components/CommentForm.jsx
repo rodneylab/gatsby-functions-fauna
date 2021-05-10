@@ -132,7 +132,15 @@ const CommentForm = ({ slug }) => {
       </div>
       <div className={formButton}>
         <small>
-          We use your IP address and
+          This site uses Akismet to reduce spam.
+          {' '}
+          <ExternalLink
+            aria-label="Lear how Akismet process comment data"
+            href="https://akismet.com/privacy/"
+          >
+            Learn how your comment data is processed
+          </ExternalLink>
+          . We pass your comment, name, email, IP address and
           {' '}
           <ExternalLink
             aria-label="Learn more about browser user agent from M D N"
@@ -141,7 +149,8 @@ const CommentForm = ({ slug }) => {
             browser user agent
           </ExternalLink>
           {' '}
-          for spam detection purposes. Neither is stored in our database.
+          to Akismet for spam detection. Neither your email address, IP address or user agent is
+          stored in our database.
         </small>
         <input type="submit" disabled={submitting} value="Submit your comment" />
         {serverState.message ? (
