@@ -21,11 +21,14 @@ export default function Home({ data }) {
           <header>
             <h1>Gatsby Functions Fauna Demo</h1>
             <p>
-              This is a demo site for showing how the{' '}
+              This is a demo site for showing how the
+              {' '}
               <ExternalLink aria-label="Learn more about Fauna" href="https://fauna.com/">
                 Fauna data API
-              </ExternalLink>{' '}
-              can be used with{' '}
+              </ExternalLink>
+              {' '}
+              can be used with
+              {' '}
               <ExternalLink
                 aria-label="Learn more about Gatsby Functions"
                 href="https://www.gatsbyjs.com/functions/"
