@@ -152,7 +152,7 @@ const CommentForm = ({ slug }) => {
           to Akismet for spam detection. Neither your email address, IP address or user agent is
           stored in our database.
         </small>
-        <input type="submit" disabled={submitting} value="Submit your comment" />
+        <input type="submit" aria-disabled={submitting} disabled={submitting} value="Submit your comment" />
         {serverState.message ? (
           <small className={serverState.ok ? '' : formError}>{serverState.message}</small>
         ) : null}
