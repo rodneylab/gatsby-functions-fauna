@@ -9,6 +9,7 @@ const {
   TWITTER_USERNAME,
   TWITTER_USER_ID,
   FACEBOOK_PAGE,
+  SITE_URL,
   TELEGRAM_USERNAME,
   WIRE_USERNAME,
 } = process.env;
@@ -16,7 +17,7 @@ const {
 module.exports = {
   siteLanguage: 'en-GB',
   siteTitle: 'Gatsby Functions Fauna',
-  siteUrl: 'https://www.example.com',
+  siteUrl: `https://${SITE_URL}`,
 
   contactEmailAddress: CONTACT_EMAIL,
   facebookPage: FACEBOOK_PAGE,
