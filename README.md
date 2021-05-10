@@ -71,7 +71,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
     ├── .gitignore
     ├── .prettierrc
     ├── commitlint.config.js
-    ├── csp-util
     ├── gatsby-browser.js
     ├── gatsby-config.js
     ├── gatsby-node.js
@@ -101,8 +100,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 8.  **`.stylelintrc.json`**: This is a configuration file for [StyleLint](https://stylelint.io/). Stylelint is a tool to help keep the formatting of your code consistent.  It can be used in teams to enforce a consistent coding style.
 
 9.  **`commitlint.config.js`**: Configuration for commitlint which is used to enforce conventional git commits.  This works in tandem with husky configuration in the `package.json` file.
-
-10.  **`csp-util`**: This is a script for placing CSP hashes in Netlify headers, improving site security when running on Netlify.
 
 11.  **`gatsby-browser.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3 browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customisation/extension of default Gatsby settings affecting the browser.
 
