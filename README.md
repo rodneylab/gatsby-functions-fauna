@@ -1,5 +1,5 @@
 <picture>
-  <source srcset="./images/rodneylab-github-gatsby-functions-fauna.png" type="image/avif">
+  <source srcset="./images/rodneylab-github-gatsby-functions-fauna.avif" type="image/avif">
   <source srcset="./images/rodneylab-github-gatsby-functions-fauna.webp" type="image/webp">
   <img src="./images/rodneylab-github-gatsby-functions-fauna.png" alt="Rodney Lab gatsby-functions-fauna Github banner">
 </picture>
