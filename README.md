@@ -30,7 +30,7 @@ Features:
     Use the Gatsby 3 CLI to create a new site, specifying the hello-world starter.
 
     ```shell
-    # create a new Gatsby 3 MDX blog site using gatsby-starter-climate
+    # create a new Gatsby 3 MDX blog site using gatsby-functions-fauna
     gatsby fauna-blog-comments https://github.com/rodneylab/gatsby-functions-fauna
     ```
 
@@ -123,7 +123,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 ## ☁️ Getting Started with Fauna
 
-Fauna provides transaction databases which are accessible via a cloud API.  It is easy to customise the Fauna functionality used in the demo for your own needs.  To <a aria-label="Open Fauna documentation" href="https://docs/fauna.com/fauna/current/drivers/javascript">get started with fauna see this guide</a>.  Also take a look at how fauna is used in this demo site:
+Fauna provides transaction databases which are accessible via a cloud API.  It is easy to customise the Fauna functionality used in the demo for your own needs.  To <a aria-label="Open Fauna documentation" href="https://docs.fauna.com/fauna/current/drivers/javascript">get started with fauna see this guide</a>.  Also take a look at how fauna is used in this demo site:
 
 - to **read data from the fauna database** in a query run at site build time in <a href="Jump to the gatsby-node.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/gatsby-node.js">`gatsby-node.js`</a>.
 
@@ -143,7 +143,7 @@ Looking for more guidance? Full documentation for Gatsby 3 lives [on the website
 
 [Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
 
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
+Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimised, global edge network.
 
 
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/rodneylab/gatsby-functions-fauna):
