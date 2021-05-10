@@ -125,9 +125,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 Fauna provides transaction databases which are accessible via a cloud API.  It is easy to customise the Fauna functionality used in the demo for your own needs.  To <a aria-label="Open Fauna documentation" href="https://docs.fauna.com/fauna/current/drivers/javascript">get started with fauna see this guide</a>.  Also take a look at how fauna is used in this demo site:
 
-- to **read data from the fauna database** in a query run at site build time in <a href="Jump to the gatsby-node.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/gatsby-node.js">`gatsby-node.js`</a>.
+- to **read data from the fauna database** in a query run at site build time in <a aria-label="Jump to the gatsby-node.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/gatsby-node.js">`gatsby-node.js`</a>.
 
-- to **create records in the fauna database** in <a aria-labe="Jump to the submit-commetn.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/src/api/submit-comment.js">`src/api/submit-comment.js`</a>.
+- to **create records in the fauna database** in <a aria-labe="Jump to the submit-comment.js file" href="https://github.com/rodneylab/gatsby-functions-fauna/blob/main/src/api/submit-comment.js">`src/api/submit-comment.js`</a>.
 
 Get in touch if I can help with specific questions.  Also let me know if you would like to see a blog post on creating a site using fauna.
 
