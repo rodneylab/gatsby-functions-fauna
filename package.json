@@ -45,7 +45,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^7.4.2",
+    "react-hook-form": "^7.5.1",
     "replace-in-file": "^6.2.0",
     "sass": "^1.32.12"
   },
@@ -65,7 +65,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
-    "prettier": "2.2.1",
+    "prettier": "^2.3.0",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.19.0"
