@@ -89,7 +89,7 @@ const CommentForm = ({ slug }) => {
         {errors.Name ? (
           <span className={formError}>
             <small>
-              We use your name for spam detection. It will appear along with your comment.
+              Please let us know your name, it will appear along with your comment.
             </small>
           </span>
         ) : null}

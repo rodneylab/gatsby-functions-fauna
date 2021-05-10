@@ -13,7 +13,9 @@
 
   input,
   textarea {
+    border: $spacing-px solid $color-theme-4;
     border-radius: $spacing-1;
+    // box-shadow: $spacing-0 $spacing-0 $spacing-1 $spacing-0 adjust-color($color-theme-4, $alpha: 0.2);
   }
 }
 
