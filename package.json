@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-climate",
+  "name": "gatsby-functions-fauna",
   "private": true,
-  "description": "A lightweight starter for a fast mdx Gatsby 3 blog site",
+  "description": "A demo stie to show how the Fauna data API can be used with Gatsby Functions.",
   "version": "0.1.0",
   "license": "BSD-3-Clause",
   "scripts": {
