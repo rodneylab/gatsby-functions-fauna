@@ -32,7 +32,7 @@ const CommentForm = ({ slug }) => {
     try {
       setSubmitting(true);
       const { Email: email, Name: name, Comments: text } = data;
-      await axios({
+      const response = await axios({
         url: '/api/submit-comment',
         method: 'POST',
         data: {
@@ -43,7 +43,7 @@ const CommentForm = ({ slug }) => {
           parentCommentId: null,
         },
       });
-      // console.log('Response: ', response);
+      console.log('Response: ', response);
       handleServerResponse(true, 'Thanks for your comment it will be reviewed and posted shortly.');
       setSubmitting(false);
       event.target.reset();
@@ -82,7 +82,7 @@ const CommentForm = ({ slug }) => {
           ariaLabel="Enter your name"
           id="comment-name"
           label="Name"
-          maxLength={32}
+          maxLength={64}
           register={register}
           required
         />
@@ -100,7 +100,7 @@ const CommentForm = ({ slug }) => {
           ariaLabel="Enter your email address"
           id="comment-email"
           label="Email"
-          maxLength={32}
+          maxLength={64}
           pattern={emailRegex}
           register={register}
           required
