@@ -41,7 +41,7 @@ const spamCheck = async ({
     blog: process.env.SITE_URL,
   });
   return client.checkSpam({
-    ip,
+    user_ip: ip,
     useragent: userAgent,
     content: text,
     email,
@@ -82,7 +82,6 @@ export default async function handler(req, res) {
     const {
       email, ip, name, parentCommentId, slug, text,
     } = req.body;
-    res.status(200).json(req.headers);
     // const ip = req.headers['client-ip'];
     const userAgent = req.headers['user-agent'];
     let markedSpam;

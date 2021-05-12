@@ -34,13 +34,11 @@ const CommentForm = ({ slug }) => {
         url: 'https://www.cloudflare.com/cdn-cgi/trace',
         method: 'GET',
       });
-      console.log('ip response: ', response);
       const ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
       const ip6Regex = /(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/;
       const ip = response.data.match(ip6Regex)
         ? response.data.match(ip6Regex)[0]
         : response.data.match(ipRegex)[0];
-      console.log('ip: ', ip);
       return ip;
     } catch (error) {
       if (error.response) {
@@ -55,26 +53,26 @@ const CommentForm = ({ slug }) => {
         'There was an error processing your comment.  Please try again later.',
       );
     }
+    return '';
   };
 
   const onSubmit = async (data, event) => {
-    getIP();
     try {
+      const ip = await getIP();
       setSubmitting(true);
       const { Email: email, Name: name, Comments: text } = data;
-      const response = await axios({
+      await axios({
         url: '/api/submit-comment',
         method: 'POST',
         data: {
           email,
-          ip: getIP(),
+          ip,
           name,
           slug,
           text,
           parentCommentId: null,
         },
       });
-      console.log('Response: ', response);
       handleServerResponse(true, 'Thanks for your comment it will be reviewed and posted shortly.');
       setSubmitting(false);
       event.target.reset();
