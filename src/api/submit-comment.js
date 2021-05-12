@@ -2,9 +2,7 @@ import { AkismetClient } from 'akismet-api';
 import axios from 'axios';
 import faunadb from 'faunadb';
 
-const createComment = async ({
-  name, parentCommentId, text, markedSpam, slug,
-}) => {
+const createComment = async ({ name, parentCommentId, text, markedSpam, slug }) => {
   const result = (async () => {
     try {
       const q = faunadb.query;
@@ -33,9 +31,7 @@ const createComment = async ({
   return result;
 };
 
-const spamCheck = async ({
-  email, ip, name, text, userAgent,
-}) => {
+const spamCheck = async ({ email, ip, name, text, userAgent }) => {
   const client = new AkismetClient({
     key: process.env.AKISMET_API_KEY,
     blog: process.env.SITE_URL,
@@ -111,7 +107,9 @@ export default async function handler(req, res) {
       if (!createCommentResult.successful) {
         res.status(400).send(createCommentResult.message);
       } else {
-        await triggerRebuild();
+        if (!markedSpam) {
+          await triggerRebuild();
+        }
         res.status(200).send('All is well that ends well.');
       }
     }
