@@ -41,7 +41,7 @@ const spamCheck = async ({
     blog: process.env.SITE_URL,
   });
   return client.checkSpam({
-    user_ip: ip,
+    ip,
     useragent: userAgent,
     content: text,
     email,
@@ -80,11 +80,10 @@ export default async function handler(req, res) {
     res.status(405).send('Method not allowed');
   } else {
     const {
-      email, name, parentCommentId, slug, text,
+      email, ip, name, parentCommentId, slug, text,
     } = req.body;
     res.status(200).json(req.headers);
-    return;
-    const ip = req.headers['client-ip'];
+    // const ip = req.headers['client-ip'];
     const userAgent = req.headers['user-agent'];
     let markedSpam;
     let akismetError;
