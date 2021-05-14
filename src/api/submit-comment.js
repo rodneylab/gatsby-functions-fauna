@@ -90,6 +90,7 @@ export default async function handler(req, res) {
     try {
       markedSpam = await spamCheck({
         email,
+        name,
         ip,
         text,
         userAgent,
