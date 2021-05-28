@@ -1,5 +1,8 @@
 /* Based on styles.css provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
 @charset "UTF-8";
+
+@use "sass:math";
+
 /* SCSS Custom Properties Definitions */
 // Widths
 $max-width-none: 'none';
@@ -80,7 +83,7 @@ $line-height-relaxed: 1.75;
 $color-theme-1: #d62828; // maximum red
 $color-theme-2: #5cc8ff; // maya blue
 $color-theme-3: #fff275; // corn
-$color-theme-4: #1b4079;// dark cornflower blue
+$color-theme-4: #1b4079; // dark cornflower blue
 
 $color-primary: #005b99;
 $color-text: #0d1821; // rich black FOGRA 29
@@ -198,11 +201,11 @@ li p {
 ul li,
 ol li {
   padding-left: $spacing-0;
-  margin-bottom: calc(#{$spacing-8 / 2});
+  margin-bottom: math.div($spacing-8, 2);
 }
 
 li > p {
-  margin-bottom: calc(#{$spacing-8 / 2});
+  margin-bottom: math.div($spacing-8, 2);
 }
 
 li *:last-child {
@@ -211,7 +214,7 @@ li *:last-child {
 
 li > ul {
   margin-left: $spacing-8;
-  margin-top: calc(#{$spacing-8 / 2});
+  margin-top: math.div($spacing-8, 2);
 }
 
 blockquote {
