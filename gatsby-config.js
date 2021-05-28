@@ -63,7 +63,7 @@ module.exports = {
       options: {
         defaults: {
           placeholder: 'tracedSVG',
-          // temporarily removing avif due to Chrome issue 
+          // temporarily removing avif due to Chrome issue
           // formats: ['auto', 'webp', 'avif'],
           formats: ['auto', 'webp'],
           quality: 100,

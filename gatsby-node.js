@@ -13,7 +13,7 @@ const getComments = async ({ secret, reporter }) => {
       // Search for the get-comments index and filter for data.markedSpam set to false
       q.Paginate(q.Match(q.Index('get-comments'), false)),
     );
-    console.log(JSON.stringify(results, null, 2));
+    // console.log(JSON.stringify(results, null, 2));
     return results.data.map(([ref, date, name, parentCommentId, slug, text]) => ({
       id: ref.id,
       date,
