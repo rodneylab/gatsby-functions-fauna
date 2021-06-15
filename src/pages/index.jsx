@@ -21,14 +21,11 @@ export default function Home({ data }) {
           <header>
             <h1>Gatsby Functions Fauna Demo</h1>
             <p>
-              This is a demo site for showing how the
-              {' '}
+              This is a demo site for showing how the{' '}
               <ExternalLink aria-label="Learn more about Fauna" href="https://fauna.com/">
                 Fauna data API
-              </ExternalLink>
-              {' '}
-              can be used with
-              {' '}
+              </ExternalLink>{' '}
+              can be used with{' '}
               <ExternalLink
                 aria-label="Learn more about Gatsby Functions"
                 href="https://www.gatsbyjs.com/functions/"
@@ -41,21 +38,29 @@ export default function Home({ data }) {
               need for using Java Script heavy, external services for managing the comments. API
               calls to Fauna are only invoked by the build server and serverless functions, freeing
               up resources on the user&apos;s device and creating a top notch user experience. Site
-              is based on
-              {' '}
+              is based on{' '}
               <ExternalLink
                 aria-label="Open Gatsby starter Climate repo"
                 href="https://github.com/rodneylab/gatsby-starter-climate"
               >
                 gatsby-starter-climate
               </ExternalLink>
-              . Code for this site is
-              {' '}
+              . Code for this site is{' '}
               <ExternalLink
                 aria-label="Open site code repo"
                 href="https://github.com/rodneylab/gatsby-functions-fauna"
               >
                 on the Rodney Lab GitHub site
+              </ExternalLink>
+              .
+            </p>
+            <p>
+              Read more{' '}
+              <ExternalLink
+                aria-label="Open Rodney Lab post on Gatsby Cloud Functions"
+                href="https://rodneylab.com/gatsby-cloud-functions-recaptcha/"
+              >
+                about how to use Gatsby Cloud Functions
               </ExternalLink>
               .
             </p>
